@@ -1,10 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/27 13:46:12 by iounejja          #+#    #+#             */
+/*   Updated: 2019/11/27 13:46:15 by iounejja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int     main()
 {
     char a = 'a';
-
-    printf("ft_printf = %d\n", ft_printf("Hello%cWorld!%c%c\n"));
-    //printf("%-r\n", a);
+    char b = 'b';
+    int c = 10;
+    
+    printf("ft_printf = %d\n", ft_printf("H%dello %c Wo%crld!\n", c, a, b));
+    //printf("%%-4c\n");
     return (0);
 }
