@@ -17,8 +17,6 @@ int     ft_printf(const char *format, ...)
     int i;
     int count;
     va_list arg_list;
-    char c;
-    int a;
 
     i = 0;
     count = 0;
@@ -30,18 +28,26 @@ int     ft_printf(const char *format, ...)
             write(1, &format[i], 1);
             count++;
         }
-        if (format[i + 1] == 'c')
+        if (format[i] == '%' && format[i + 1] == 'c')
         {
-            c = va_arg(arg_list, int);
-            write(1, &c, 1);
+            ft_putchar(va_arg(arg_list, int));
             i++;
         }
-        /*if (format[i + 1] == 'd' || format[i + 1] == 'i')
+        if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
         {
-            a = va_arg(arg_list, int);
-            write(1, &a, 1);
+            ft_putnbr(va_arg(arg_list, int));
             i++;
-        }*/
+        }
+        if (format[i] == '%' && format[i + 1] == 's')
+        {
+            ft_putstr(va_arg(arg_list, char *));
+            i++;
+        }
+        if (format[i] == '%' && format[i + 1] == 'p')
+        {
+            ft_hex((unsigned int)va_arg(arg_list, unsigned int));
+            i++;
+        }
         i++;
     }
     va_end(arg_list);

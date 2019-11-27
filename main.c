@@ -17,8 +17,11 @@ int     main()
     char a = 'a';
     char b = 'b';
     int c = 10;
+    char *str = "issam";
+    char *p = &a;
     
-    printf("ft_printf = %d\n", ft_printf("H%dello %c Wo%crld!\n", c, a, b));
-    //printf("%%-4c\n");
+    //printf("ft_printf = %d\n", ft_printf("Hello World! + %p\n", p));
+    printf("%d\n", (unsigned int)p);
+    printf("%p\n", p);
     return (0);
 }
