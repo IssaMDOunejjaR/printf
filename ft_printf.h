@@ -5,11 +5,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include "libft/libft.h"
 
 int     ft_printf(const char *format, ...);
 void    ft_putchar(char c);
 void    ft_putstr(char *str);
 void    ft_putnbr(int nb);
-void    ft_hex(unsigned int p);
+void    ft_hex(unsigned long p, char c);
 
 #endif

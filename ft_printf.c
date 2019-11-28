@@ -28,6 +28,11 @@ int     ft_printf(const char *format, ...)
             write(1, &format[i], 1);
             count++;
         }
+        if (format[i] == '%' && format[i + 1] == '%')
+        {
+            i++;
+            write(1, &format[i], 1);
+        }
         if (format[i] == '%' && format[i + 1] == 'c')
         {
             ft_putchar(va_arg(arg_list, int));
@@ -45,7 +50,15 @@ int     ft_printf(const char *format, ...)
         }
         if (format[i] == '%' && format[i + 1] == 'p')
         {
-            ft_hex((unsigned int)va_arg(arg_list, unsigned int));
+            ft_hex(va_arg(arg_list, unsigned long), 'p');
+            i++;
+        }
+        if (format[i] == '%' && (format[i + 1] == 'x' || format[i + 1] == 'X'))
+        {
+            if (format[i + 1] == 'X')
+                ft_hex(va_arg(arg_list, int), 'X');
+            else
+                ft_hex(va_arg(arg_list, int), 'x');
             i++;
         }
         i++;

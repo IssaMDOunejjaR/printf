@@ -16,12 +16,12 @@ int     main()
 {
     char a = 'a';
     char b = 'b';
-    int c = 10;
+    int c = 15987;
     char *str = "issam";
-    char *p = &a;
+    int *p = &c;
     
-    //printf("ft_printf = %d\n", ft_printf("Hello World! + %p\n", p));
-    printf("%d\n", (unsigned int)p);
-    printf("%p\n", p);
+    ft_printf("Hello %a World!\n");
+    //printf("%d\n", (unsigned int)p);
+    printf("Hello World!\n");
     return (0);
 }
