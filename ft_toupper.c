@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 18:04:43 by iounejja          #+#    #+#             */
-/*   Updated: 2019/12/18 18:04:55 by iounejja         ###   ########.fr       */
+/*   Created: 2019/10/16 14:48:10 by iounejja          #+#    #+#             */
+/*   Updated: 2019/12/19 12:34:57 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int		ft_toupper(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-		write(1, &str[i++], 1);
+	if (c >= 'a' && c <= 'z')
+		return (c -= 32);
+	return (c);
 }

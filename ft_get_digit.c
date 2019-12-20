@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_digit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/14 13:06:45 by iounejja          #+#    #+#             */
-/*   Updated: 2019/12/18 18:05:25 by iounejja         ###   ########.fr       */
+/*   Created: 2019/12/10 15:39:44 by iounejja          #+#    #+#             */
+/*   Updated: 2019/12/15 17:54:42 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int nb)
+int		ft_get_digit(const char *str, int i)
 {
-	long long nbr;
+	int		n;
+	long	nb;
+	long	val;
 
-	nbr = nb;
-	if (nbr < 0)
+	n = 1;
+	nb = 0;
+	if (str[i] == '-')
+		n = -1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		ft_putchar('-');
-		nbr = -nbr;
+		val = nb;
+		nb = ((nb * 10) + (str[i++] - 48) * n);
+		if (n == 1 && val > nb)
+			return (-1);
+		if (n == -1 && val < nb)
+			return (0);
 	}
-	if (nbr > 9)
-		ft_putnbr(nbr / 10);
-	ft_putchar(nbr % 10 + '0');
+	return (nb);
 }

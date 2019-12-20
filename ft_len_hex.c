@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_len_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 18:04:43 by iounejja          #+#    #+#             */
-/*   Updated: 2019/12/18 18:04:55 by iounejja         ###   ########.fr       */
+/*   Created: 2019/12/13 14:09:04 by iounejja          #+#    #+#             */
+/*   Updated: 2019/12/18 17:43:14 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int		ft_len_hex(unsigned long nb)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
-		write(1, &str[i++], 1);
+	if (nb == 0)
+	{
+		i = 1;
+		return (i);
+	}
+	while (nb != 0)
+	{
+		i++;
+		nb /= 16;
+	}
+	return (i);
 }

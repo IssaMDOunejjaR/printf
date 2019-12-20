@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_flags.c                                      :+:      :+:    :+:   */
+/*   ft_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/27 13:46:45 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/27 13:46:47 by iounejja         ###   ########.fr       */
+/*   Created: 2019/12/18 17:14:41 by iounejja          #+#    #+#             */
+/*   Updated: 2019/12/18 18:14:10 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     check_flags(char *str)
+#include "ft_printf.h"
+
+void	ft_print(int l_nbr, char c)
 {
-    return (0);
+	while (l_nbr-- > 0)
+		ft_putchar(c);
 }

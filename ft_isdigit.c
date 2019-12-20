@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 18:04:43 by iounejja          #+#    #+#             */
-/*   Updated: 2019/12/18 18:04:55 by iounejja         ###   ########.fr       */
+/*   Created: 2019/10/16 11:34:46 by iounejja          #+#    #+#             */
+/*   Updated: 2019/12/19 12:15:17 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int		ft_isdigit(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-		write(1, &str[i++], 1);
+	if (!(c >= '0' && c <= '9'))
+		return (0);
+	return (1);
 }
